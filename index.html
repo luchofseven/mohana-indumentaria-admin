@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Mohana</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <nav id="navbar">
+      <h4 id="user-name"></h4>
+      <button id="btn-login">Login</button>
+      <button id="btn-logout">Logout</button>
+    </nav>
+    <div id="login-modal">
+      <form id="login-form">
+        <label for="email">Email:</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="Ingrese su email"
+          required
+        />
+        <label for="password">Contraseña:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Ingrese su contraseña"
+          required
+        />
+
+        <input type="submit" />
+        <button id="close-modal">Cerrar</button>
+      </form>
+    </div>
+    <form id="product-form">
+      <label for="name">Nombre de producto:</label>
+      <input
+        type="text"
+        placeholder="Nombre del producto"
+        id="product-name"
+        required
+      />
+
+      <label for="price">Precio de producto:</label>
+      <input
+        type="number"
+        placeholder="Precio del producto"
+        id="product-price"
+        required
+      />
+
+      <label for="img">URL de imagen del producto:</label>
+      <input
+        type="text"
+        placeholder="URL de imagen"
+        id="product-img"
+        required
+      />
+
+      <label for="stock">Stock:</label>
+      <input type="number" id="product-stock" required />
+
+      <button id="btn-product-add">Agregar</button>
+    </form>
+
+    <div id="products-container"></div>
+
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,295 @@
+:root {
+  --main-color: #ff01c9;
+  --second-color: #eeaddf;
+  --third-color: #ffd9f6;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+#navbar {
+  width: 100%;
+  background-color: #ff01c9;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+}
+
+#navbar button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #ff7fe1;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+#navbar button:hover {
+  background-color: #eeaddf;
+  transform: scale(1.05);
+}
+
+#login-modal {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 60%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms ease-in-out;
+}
+
+#login-modal.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#user-name {
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin: 0 1rem;
+}
+
+#login-form {
+  height: 100%;
+  background-color: #ff01c9;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#login-form label {
+  color: white;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+#login-form input {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  width: 70%;
+  border: none;
+}
+
+#login-form input[type="submit"] {
+  width: 50%;
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #ff7fe1;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+#login-form input[type="submit"]:hover {
+  background-color: #eeaddf;
+  transform: scale(1.05);
+}
+
+#login-form #close-modal {
+  width: 50%;
+  margin: 0;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #ff7fe1;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+#login-form #close-modal:hover {
+  background-color: #eeaddf;
+  transform: scale(1.05);
+}
+
+#product-form {
+  background-color: var(--third-color);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#product-form label {
+  color: #000000;
+  font-weight: bold;
+}
+
+#product-form input {
+  padding: 0.3rem 0.8rem;
+  margin: 0.8rem auto;
+  border: none;
+  border-radius: 0.2rem;
+  text-align: center;
+}
+
+#product-form button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--main-color);
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#products-container {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+#products-container div {
+  max-width: 25rem;
+  margin: 1.5rem;
+  border: 1px solid var(--main-color);
+  border-radius: 0.5rem;
+}
+
+#products-container div img {
+  border-radius: 0.5rem;
+}
+
+#products-container div p {
+  color: #000000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+#products-container div h5 {
+  color: var(--main-color);
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+#products-container div button {
+  padding: 0.7rem 1.5rem;
+  margin: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--main-color);
+  color: #ffffff;
+  font-weight: bold;
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  #products-container {
+    margin: 1rem 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1024px) {
+  #product-form {
+    font-size: 1.2rem;
+    padding: 2.5rem;
+  }
+
+  #product-form input {
+    width: 80%;
+    font-size: 1.2rem;
+    padding: 1rem 0.5rem;
+  }
+
+  #product-form button {
+    font-size: 1.1rem;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    transition: all 200ms ease;
+  }
+
+  #product-form button:hover {
+    background-color: rgba(255, 1, 201, 0.5);
+  }
+
+  #products-container {
+    margin: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  #products-container div {
+    max-width: 20rem;
+    min-width: 20rem;
+    max-height: 50rem;
+    min-height: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+
+  #products-container div button {
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 200ms ease;
+  }
+
+  #products-container div button:hover {
+    background-color: rgba(255, 1, 201, 0.5);
+  }
+}
